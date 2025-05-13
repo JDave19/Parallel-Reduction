@@ -1,0 +1,22 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+        "label": "Build CUDA",
+        "type": "shell",
+        "command": "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.8/bin/nvcc.exe",
+        "args": [
+            "-o",
+            "/CUDA/reduction.exe",
+            "/CUDA/reduction.cu"
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        }
+        }
+    ]
+ }
+    
