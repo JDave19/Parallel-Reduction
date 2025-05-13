@@ -1,4 +1,4 @@
-# Parallel-Reduction# CUDA Parallel Reduction Optimization Summary
+# CUDA Parallel Reduction Optimization Summary
 Author: Janak Dave
 
 Source: CUDA Webinar by Mark Harris (NVIDIA)  
