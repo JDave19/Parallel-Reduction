@@ -69,7 +69,9 @@ float run_fast_reduction(short* d_input, float* d_pv_high_float) {
         d_input_float = d_out;
         current_size = gridSize;
     }
-
+    if (prev_buffer != nullptr) {
+    cudaFree(prev_buffer);
+    }
     // Final result in d_input_float[0]
     cudaMemcpy(d_pv_high_float, d_input_float, sizeof(float), cudaMemcpyDeviceToDevice);
     float result;
@@ -93,7 +95,7 @@ int main() {
     cudaMemcpy(d_input, h_input, N * sizeof(short), cudaMemcpyHostToDevice);
 
     // Run the kernel multiple times with same input
-    for (int j = 0; j < 10; ++j) {
+    for (int j = 0; j < 1000000000; ++j) {
         float result = run_fast_reduction(d_input, d_pv_high_float);
         std::cout << "Run #" << j + 1 << ", Final sum: " << result << std::endl;
     }

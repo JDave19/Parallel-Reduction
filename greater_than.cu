@@ -73,7 +73,7 @@ int main() {
     cudaMalloc(&d_in, N * sizeof(float));
     cudaMemcpy(d_in, h_in, N * sizeof(float), cudaMemcpyHostToDevice);
 
-    int blocks = (N + THREADS * 2 - 1) / (THREADS * 2);
+    int blocks = (N + THREADS * 2 - 1) / (THREADS * 2); // 1014
     cudaMalloc(&d_tmp, blocks * sizeof(float));
     cudaMalloc(&d_out, sizeof(float));
 
@@ -92,3 +92,4 @@ int main() {
     free(h_in);
     return 0;
 }
+
